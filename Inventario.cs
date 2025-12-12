@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PV.bbdd.Controladores;
+using PV.bbdd.Modelos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,32 +32,120 @@ namespace PV
         private void Inventario_Load(object sender, EventArgs e)
         {
 
-                
+
+        }
+
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void reloadProduct()
+        {
+            dgvSupplier.Columns.Clear();
+
+            DataGridViewTextBoxColumn colId = new DataGridViewTextBoxColumn();
+            colId.HeaderText = "ID";
+            colId.DataPropertyName = "Id"; // vincula con la propiedad del objeto
+            colId.Name = "colId";
+
+            DataGridViewTextBoxColumn colNombre = new DataGridViewTextBoxColumn();
+            colNombre.HeaderText = "Nombre";
+            colNombre.DataPropertyName = "name";
+            colNombre.Name = "colNombre";
+
+            DataGridViewTextBoxColumn colAmount = new DataGridViewTextBoxColumn();
+            colAmount.HeaderText = "Cantidad";
+            colAmount.DataPropertyName = "amount";
+            colAmount.Name = "colAmount";
+
+            DataGridViewTextBoxColumn colPrice = new DataGridViewTextBoxColumn();
+            colPrice.HeaderText = "Precio";
+            colPrice.DataPropertyName = "price";
+            colPrice.Name = "colPrice";
+
+            dgvSupplier.Columns.AddRange(new DataGridViewColumn[] { colId, colNombre, colAmount, colPrice });
+
+            // Datos de ejemplo
+            List<InventarioI> inventarios = new InventarioController().ObtenerInventario();
+
+            dgvSupplier.AutoGenerateColumns = false;
+            dgvSupplier.DataSource = inventarios;
+            buttonDelete.Enabled = false;
+            buttonUpdate.Enabled = false;
+            textBoxProductCode.Text = "";
+            textBoxProductName.Text = "";
+            textBoxProductAmount.Text = "";
+            textBoxProductPrice.Text = "";
+        }
+
+        private void Product_Load(object sender, EventArgs e)
+        {
+            this.reloadProduct();
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            //textBoxProductCode.Text= "000001";
-            //textBoxProductName.Text = "Coca Cola";
-            //textBoxProductPrice.Text = "50";
-            //textBoxProductAmount.Text = "25";
-            if (textBoxProductCode.Text.Length > 0 && textBoxProductName.Text.Length > 0 && textBoxProductPrice.Text.Length > 0 && textBoxProductAmount.Text.Length > 0)
-            {
-                var index = this.dataGridView1.Rows.Add();
-                dataGridView1.Rows[index].Cells[0].Value = textBoxProductCode.Text;
-                dataGridView1.Rows[index].Cells[1].Value = textBoxProductName.Text;
-                dataGridView1.Rows[index].Cells[2].Value = textBoxProductPrice.Text;
-                dataGridView1.Rows[index].Cells[3].Value = textBoxProductAmount.Text;
-                textBoxProductCode.Text = "";
-                textBoxProductName.Text = "";
-                textBoxProductPrice.Text = "";
-                textBoxProductAmount.Text = "";
 
-            }
+
+            InventarioI miInventario = new InventarioI
+            {
+                id = long.Parse(textBoxProductCode.Text),
+                name = textBoxProductName.Text,
+                amount = textBoxProductAmount.Text,
+                price = textBoxProductPrice.Text
+            };
+            new InventarioController().InsertarInventario(miInventario);
+            this.reloadProduct();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void buttonBack_Click(object sender, EventArgs e)
         {
+            buttonDelete.Enabled = false;
+            buttonUpdate.Enabled = false;
+            textBoxProductCode.Text = "";
+            textBoxProductName.Text = "";
+            textBoxProductAmount.Text = "";
+            textBoxProductPrice.Text = "";
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            InventarioI miInventario = new InventarioI
+            {
+                id = long.Parse(textBoxProductCode.Text),
+                name = textBoxProductName.Text,
+                amount = textBoxProductAmount.Text,
+                price = textBoxProductPrice.Text
+            };
+            Console.WriteLine(miInventario);    
+            new InventarioController().EliminarInventario((int)miInventario.id);
+            this.reloadProduct();
+        }
+
+        private void dgvSupplier_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            buttonDelete.Enabled = true;
+            buttonUpdate.Enabled = true;
+
+            textBoxProductCode.Text = dgvSupplier.Rows[e.RowIndex].Cells[0].Value.ToString();
+            textBoxProductName.Text = dgvSupplier.Rows[e.RowIndex].Cells[1].Value.ToString();
+            textBoxProductAmount.Text = dgvSupplier.Rows[e.RowIndex].Cells[2].Value.ToString();
+            textBoxProductPrice.Text = dgvSupplier.Rows[e.RowIndex].Cells[3].Value.ToString();
+        }
+
+        private void buttonUpdate_Click(object sender, EventArgs e)
+        {
+            InventarioI miInventario = new InventarioI
+            {
+                id = long.Parse(textBoxProductCode.Text),
+                name = textBoxProductName.Text,
+                amount = textBoxProductAmount.Text,
+                price = textBoxProductPrice.Text
+            };
+            new InventarioController().ActualizarInventario(miInventario);
+            this.reloadProduct();
 
         }
     }

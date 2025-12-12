@@ -28,31 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBoxProductPrice = new System.Windows.Forms.TextBox();
+            this.textBoxClientAge = new System.Windows.Forms.TextBox();
             this.labelProductPrice = new System.Windows.Forms.Label();
-            this.textBoxProductAmount = new System.Windows.Forms.TextBox();
+            this.textBoxClientLastName = new System.Windows.Forms.TextBox();
             this.labelLastNameClient = new System.Windows.Forms.Label();
-            this.textBoxProductName = new System.Windows.Forms.TextBox();
+            this.textBoxClientName = new System.Windows.Forms.TextBox();
             this.labelClientName = new System.Windows.Forms.Label();
-            this.textBoxProductCode = new System.Windows.Forms.TextBox();
+            this.textBoxClientCode = new System.Windows.Forms.TextBox();
             this.labelClientCode = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.buttonAdd = new System.Windows.Forms.Button();
-            this.buttonBack = new System.Windows.Forms.Button();
-            this.title = new System.Windows.Forms.Label();
+            this.dgvClient = new System.Windows.Forms.DataGridView();
             this.Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.age = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.title = new System.Windows.Forms.Label();
+            this.buttonBack = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            this.buttonUpdate = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClient)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBoxProductPrice
+            // textBoxClientAge
             // 
-            this.textBoxProductPrice.Location = new System.Drawing.Point(121, 128);
-            this.textBoxProductPrice.Name = "textBoxProductPrice";
-            this.textBoxProductPrice.Size = new System.Drawing.Size(157, 20);
-            this.textBoxProductPrice.TabIndex = 35;
+            this.textBoxClientAge.Location = new System.Drawing.Point(121, 128);
+            this.textBoxClientAge.Name = "textBoxClientAge";
+            this.textBoxClientAge.Size = new System.Drawing.Size(157, 20);
+            this.textBoxClientAge.TabIndex = 35;
             // 
             // labelProductPrice
             // 
@@ -64,12 +66,12 @@
             this.labelProductPrice.TabIndex = 34;
             this.labelProductPrice.Text = "Edad";
             // 
-            // textBoxProductAmount
+            // textBoxClientLastName
             // 
-            this.textBoxProductAmount.Location = new System.Drawing.Point(121, 102);
-            this.textBoxProductAmount.Name = "textBoxProductAmount";
-            this.textBoxProductAmount.Size = new System.Drawing.Size(157, 20);
-            this.textBoxProductAmount.TabIndex = 33;
+            this.textBoxClientLastName.Location = new System.Drawing.Point(121, 102);
+            this.textBoxClientLastName.Name = "textBoxClientLastName";
+            this.textBoxClientLastName.Size = new System.Drawing.Size(157, 20);
+            this.textBoxClientLastName.TabIndex = 33;
             // 
             // labelLastNameClient
             // 
@@ -81,12 +83,12 @@
             this.labelLastNameClient.TabIndex = 32;
             this.labelLastNameClient.Text = "Apellido";
             // 
-            // textBoxProductName
+            // textBoxClientName
             // 
-            this.textBoxProductName.Location = new System.Drawing.Point(121, 76);
-            this.textBoxProductName.Name = "textBoxProductName";
-            this.textBoxProductName.Size = new System.Drawing.Size(157, 20);
-            this.textBoxProductName.TabIndex = 31;
+            this.textBoxClientName.Location = new System.Drawing.Point(121, 76);
+            this.textBoxClientName.Name = "textBoxClientName";
+            this.textBoxClientName.Size = new System.Drawing.Size(157, 20);
+            this.textBoxClientName.TabIndex = 31;
             // 
             // labelClientName
             // 
@@ -98,12 +100,12 @@
             this.labelClientName.TabIndex = 30;
             this.labelClientName.Text = "Nombre";
             // 
-            // textBoxProductCode
+            // textBoxClientCode
             // 
-            this.textBoxProductCode.Location = new System.Drawing.Point(121, 50);
-            this.textBoxProductCode.Name = "textBoxProductCode";
-            this.textBoxProductCode.Size = new System.Drawing.Size(157, 20);
-            this.textBoxProductCode.TabIndex = 29;
+            this.textBoxClientCode.Location = new System.Drawing.Point(121, 50);
+            this.textBoxClientCode.Name = "textBoxClientCode";
+            this.textBoxClientCode.Size = new System.Drawing.Size(157, 20);
+            this.textBoxClientCode.TabIndex = 29;
             // 
             // labelClientCode
             // 
@@ -116,49 +118,19 @@
             this.labelClientCode.Text = "Codigo";
             this.labelClientCode.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // dataGridView1
+            // dgvClient
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvClient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClient.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Code,
             this.name,
             this.lastName,
             this.age});
-            this.dataGridView1.Location = new System.Drawing.Point(34, 202);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(603, 198);
-            this.dataGridView1.TabIndex = 27;
-            // 
-            // buttonAdd
-            // 
-            this.buttonAdd.Font = new System.Drawing.Font("Lucida Sans Unicode", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdd.Location = new System.Drawing.Point(643, 320);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(127, 37);
-            this.buttonAdd.TabIndex = 26;
-            this.buttonAdd.Text = "Agregar";
-            this.buttonAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.buttonAdd.UseVisualStyleBackColor = true;
-            // 
-            // buttonBack
-            // 
-            this.buttonBack.Font = new System.Drawing.Font("Lucida Sans Unicode", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBack.Location = new System.Drawing.Point(643, 363);
-            this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(127, 37);
-            this.buttonBack.TabIndex = 25;
-            this.buttonBack.Text = "Volver";
-            this.buttonBack.UseVisualStyleBackColor = true;
-            // 
-            // title
-            // 
-            this.title.AutoSize = true;
-            this.title.Font = new System.Drawing.Font("Lucida Sans Unicode", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.title.Location = new System.Drawing.Point(323, 9);
-            this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(114, 34);
-            this.title.TabIndex = 36;
-            this.title.Text = "Cliente";
+            this.dgvClient.Location = new System.Drawing.Point(34, 202);
+            this.dgvClient.Name = "dgvClient";
+            this.dgvClient.Size = new System.Drawing.Size(603, 198);
+            this.dgvClient.TabIndex = 27;
+            this.dgvClient.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClient_CellClick);
             // 
             // Code
             // 
@@ -185,26 +157,84 @@
             this.age.Name = "age";
             this.age.ReadOnly = true;
             // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Font = new System.Drawing.Font("Lucida Sans Unicode", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAdd.Location = new System.Drawing.Point(643, 320);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(127, 37);
+            this.buttonAdd.TabIndex = 26;
+            this.buttonAdd.Text = "Agregar";
+            this.buttonAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
+            // title
+            // 
+            this.title.AutoSize = true;
+            this.title.Font = new System.Drawing.Font("Lucida Sans Unicode", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title.Location = new System.Drawing.Point(323, 9);
+            this.title.Name = "title";
+            this.title.Size = new System.Drawing.Size(114, 34);
+            this.title.TabIndex = 36;
+            this.title.Text = "Cliente";
+            // 
+            // buttonBack
+            // 
+            this.buttonBack.Font = new System.Drawing.Font("Lucida Sans Unicode", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBack.Location = new System.Drawing.Point(643, 363);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(127, 37);
+            this.buttonBack.TabIndex = 25;
+            this.buttonBack.Text = "Volver";
+            this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Font = new System.Drawing.Font("Lucida Sans Unicode", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDelete.Location = new System.Drawing.Point(643, 66);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(127, 37);
+            this.buttonDelete.TabIndex = 37;
+            this.buttonDelete.Text = "Eliminar";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
+            // buttonUpdate
+            // 
+            this.buttonUpdate.Font = new System.Drawing.Font("Lucida Sans Unicode", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonUpdate.Location = new System.Drawing.Point(643, 109);
+            this.buttonUpdate.Name = "buttonUpdate";
+            this.buttonUpdate.Size = new System.Drawing.Size(127, 37);
+            this.buttonUpdate.TabIndex = 38;
+            this.buttonUpdate.Text = "Actualizar";
+            this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
+            // 
             // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonUpdate);
+            this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.title);
-            this.Controls.Add(this.textBoxProductPrice);
+            this.Controls.Add(this.textBoxClientAge);
             this.Controls.Add(this.labelProductPrice);
-            this.Controls.Add(this.textBoxProductAmount);
+            this.Controls.Add(this.textBoxClientLastName);
             this.Controls.Add(this.labelLastNameClient);
-            this.Controls.Add(this.textBoxProductName);
+            this.Controls.Add(this.textBoxClientName);
             this.Controls.Add(this.labelClientName);
-            this.Controls.Add(this.textBoxProductCode);
+            this.Controls.Add(this.textBoxClientCode);
             this.Controls.Add(this.labelClientCode);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvClient);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.buttonBack);
             this.Name = "Clientes";
             this.Text = "Form2";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Clientes_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClient)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,21 +242,23 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBoxProductPrice;
+        private System.Windows.Forms.TextBox textBoxClientAge;
         private System.Windows.Forms.Label labelProductPrice;
-        private System.Windows.Forms.TextBox textBoxProductAmount;
+        private System.Windows.Forms.TextBox textBoxClientLastName;
         private System.Windows.Forms.Label labelLastNameClient;
-        private System.Windows.Forms.TextBox textBoxProductName;
+        private System.Windows.Forms.TextBox textBoxClientName;
         private System.Windows.Forms.Label labelClientName;
-        private System.Windows.Forms.TextBox textBoxProductCode;
+        private System.Windows.Forms.TextBox textBoxClientCode;
         private System.Windows.Forms.Label labelClientCode;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvClient;
         private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.DataGridViewTextBoxColumn Code;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn age;
+        private System.Windows.Forms.Button buttonBack;
+        private System.Windows.Forms.Button buttonDelete;
+        private System.Windows.Forms.Button buttonUpdate;
     }
 }

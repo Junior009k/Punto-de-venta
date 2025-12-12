@@ -78,6 +78,7 @@
             this.buttonBox.TabIndex = 3;
             this.buttonBox.Text = "Caja";
             this.buttonBox.UseVisualStyleBackColor = true;
+            this.buttonBox.Click += new System.EventHandler(this.buttonBox_Click);
             // 
             // buttonClient
             // 
@@ -88,6 +89,7 @@
             this.buttonClient.TabIndex = 4;
             this.buttonClient.Text = "Clientes";
             this.buttonClient.UseVisualStyleBackColor = true;
+            this.buttonClient.Click += new System.EventHandler(this.buttonClient_Click);
             // 
             // buttonReport
             // 
@@ -98,6 +100,7 @@
             this.buttonReport.TabIndex = 5;
             this.buttonReport.Text = "Reporteria";
             this.buttonReport.UseVisualStyleBackColor = true;
+            this.buttonReport.Click += new System.EventHandler(this.buttonReport_Click);
             // 
             // buttonSuppliers
             // 
@@ -108,6 +111,7 @@
             this.buttonSuppliers.TabIndex = 6;
             this.buttonSuppliers.Text = "Suplidores";
             this.buttonSuppliers.UseVisualStyleBackColor = true;
+            this.buttonSuppliers.Click += new System.EventHandler(this.buttonSuppliers_Click);
             // 
             // Form1
             // 
